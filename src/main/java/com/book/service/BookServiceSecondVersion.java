@@ -1,6 +1,6 @@
-package com.example.springcrud.service;
+package com.book.service;
 
-import com.example.springcrud.entity.Book;
+import com.book.entity.Book;
 
 import java.util.List;
 

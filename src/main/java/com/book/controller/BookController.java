@@ -1,35 +1,35 @@
-package com.example.springcrud.controller;
+package com.book.controller;
 
-import com.example.springcrud.entity.Book;
-import com.example.springcrud.service.BookServiceInterface;
+import com.book.service.BookServiceInterface;
+import com.book.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/")
+@RequestMapping("api/v1/books")
 public class BookController {
 
     @Autowired
     private BookServiceInterface service;
 
-    @GetMapping("books")
-    public List<Book> getAllBoks(){
+    @GetMapping()
+    public List<Book> getAllBooks(){
         return service.getAllBooks();
     }
 
-    @PostMapping("books")
+    @PostMapping()
     public Book saveBook(@RequestBody Book book){
         return service.saveBook(book);
     }
 
-    @PutMapping("books")
+    @PutMapping()
     public Book updateBook(@RequestBody Book book){
         return service.updateBook(book);
     }
 
-    @DeleteMapping("books/{id}")
+    @DeleteMapping("/{id}")
     public void deleteBook(@PathVariable Long id){
         service.deleteBook(id);
     }
